@@ -10,7 +10,7 @@ pub fn get_common_divisor(array: Vec<i32>) -> Result<Vec<i32>, String> {
     let mut result_vec = Vec::<i32>::new();
 
     // Флаг для условия добавления переменной в массив
-    let mut flag = true;
+    let mut flag;
 
     // Возвращаем ошибку, если подан пустой массив, иначе - максимальное число из массива
     let max_num = match array.iter().max() {
@@ -56,8 +56,8 @@ mod tests {
         assert_eq!(get_common_divisor(vec_1), Ok(vec![2, 3, 6]));
         assert_eq!(get_common_divisor(vec_2), Err("Error: empty array".to_string()));
         assert_eq!(get_common_divisor(vec_3), Ok(vec![]));
-        assert_eq!(get_common_divisor(vec_4), Ok(vec![2, 3, 6, 12]));
+        assert_eq!(get_common_divisor(vec_4), Ok(vec![2, 3, 4, 6, 12]));
         assert_eq!(get_common_divisor(vec_5), Ok(vec![5, 25]));
-        assert_eq!(get_common_divisor(vec_6), Ok(vec![2, 3]));
+        assert_eq!(get_common_divisor(vec_6), Ok(vec![2, 3, 4, 6, 12]));
     }
 }

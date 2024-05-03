@@ -10,7 +10,7 @@ pub fn get_prime_numbers(low: u32, high: u32) -> Result<Vec<u32>, String> {
     let mut res_vec = Vec::<u32>::new();
 
     // Флаг для условия добавления переменной в массив
-    let mut flag = true;
+    let mut flag;
 
     // Проверяем правильность нижней и верхней границ
     if low >= high {
