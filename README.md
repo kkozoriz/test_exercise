@@ -11,3 +11,7 @@ It is written in [Rust](https://www.rust-lang.org/tools/install), so make sure i
 
 ## You should see something like this
 ![plot](./tests.png)
+***
+
+## Table for exercise 4:
+![plot](./exercise_4.png)
