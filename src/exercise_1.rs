@@ -28,6 +28,7 @@ pub fn get_computer_string(number: i32) -> String {
 #[cfg(test)]
 mod tests {
     use crate::exercise_1::get_computer_string;
+    use pretty_assertions::assert_eq;
     #[test]
     fn get_computer_string_test() {
         let num_1 = -1001;
