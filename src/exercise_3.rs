@@ -1,10 +1,13 @@
 // TODO: Написать функцию/метод, которая возвращает массив простых чисел в диапазоне (2 числа - минимальное и максимальное) заданных чисел.
 //  Например, на вход переданы 2 числа: от 11 до 20  (диапазон считается включая граничные значения).
 //  На выходе программа должна выдать [11, 13 , 17, 19]
+//  0 <= low <= 2^32
+//  0 <= high <= 2^32
+//  0 <= array[i] <= 2^32
 
-pub fn get_prime_numbers(low: i32, high: i32) -> Result<Vec<i32>, String> {
+pub fn get_prime_numbers(low: u32, high: u32) -> Result<Vec<u32>, String> {
     // Создаем результирующий массив
-    let mut res_vec = Vec::<i32>::new();
+    let mut res_vec = Vec::<u32>::new();
 
     // Флаг для условия добавления переменной в массив
     let mut flag = true;
@@ -20,7 +23,7 @@ pub fn get_prime_numbers(low: i32, high: i32) -> Result<Vec<i32>, String> {
         flag = true;
 
         // Идем в цикле по делителям до квадратного корня числа
-        for j in 2..=f32::sqrt(i as f32) as i32 {
+        for j in 2..=f32::sqrt(i as f32) as u32 {
             // Проверяем делится ли без остатка число на делитель
             if i % j == 0 {
                 flag = false;
@@ -48,7 +51,7 @@ mod tests {
     use crate::exercise_3::get_prime_numbers;
     use pretty_assertions::assert_eq;
     #[test]
-    pub fn get_prime_numbers_test() {
+    fn get_prime_numbers_test() {
         let (low_1, high_1) = (11, 20);
         let (low_2, high_2) = (3, 47);
         let (low_3, high_3) = (0, 0);
